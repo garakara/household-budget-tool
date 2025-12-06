@@ -107,8 +107,8 @@ household-budget-tool/
 
 ## 👤 作成者
 
-- GitHub: [@your-username](https://github.com/your-username)
-- 作成日: 2024年12月
+- GitHub: [@garakara](https://github.com/garakara)
+- 作成日: 2025年12月
 
 ## 📝 ライセンス
 
