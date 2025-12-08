@@ -92,18 +92,23 @@ household-budget-tool/
 └── images/                 # README用画像
 ```
 
-## 🔮 今後の予定
+## Webアプリ版
 
-### Phase 2 (予定)
-- [ ] 使いすぎ警告機能
-- [ ] 月次比較レポート
-- [ ] 必需品 vs 浪費の分析
+### 起動方法
+```bash
+streamlit run app.py
+```
 
-### Phase 3 (予定)
-- [ ] Webアプリ化(Streamlit)
-- [ ] データベース連携(SQLite)
-- [ ] 予算設定機能
-- [ ] 機械学習による支出予測
+### 機能
+
+- ダッシュボード表示
+- カテゴリ別分析
+- データ一覧表示
+- CSVダウンロード
+
+### スクリーンショット
+
+![Webアプリ](images/webapp_demo.png)
 
 ## 👤 作成者
 

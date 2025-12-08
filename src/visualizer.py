@@ -35,6 +35,39 @@ class Visualizer:
         plt.close()
         print(f"✓ グラフを保存: {save_path}")
 
+
+
+    def plot_necessity_comparison(self, save_path="outputs/graphs/necessity.png"):
+        """必需品 vs 浪費の比較"""
+        necessity_sum = self.df.groupby('必需品フラグ')['金額'].sum()
+        
+        labels = ['浪費', '必需品']
+        colors = ['#FF6B6B', '#4ECDC4']
+        
+        plt.figure(figsize=(8, 6))
+        plt.pie(necessity_sum.values, labels=labels, colors=colors, 
+                autopct='%1.1f%%', startangle=90)
+        plt.title('必需品 vs 浪費', fontsize=16)
+        plt.savefig(save_path, dpi=300, bbox_inches='tight')
+        plt.close()
+        print(f"✓ グラフを保存: {save_path}")
+
+    def plot_rating_distribution(self, save_path="outputs/graphs/rating.png"):
+        """評価別の支出分布"""
+        rating_sum = self.df.groupby('評価')['金額'].sum()
+        
+        plt.figure(figsize=(10, 6))
+        colors = ['#FF6B6B', '#FFA07A', '#FFD93D', '#6BCF7F', '#4ECDC4']
+        plt.bar(rating_sum.index, rating_sum.values, color=colors)
+        plt.xlabel('評価', fontsize=12)
+        plt.ylabel('支出金額 (円)', fontsize=12)
+        plt.title('買い物評価別支出', fontsize=16)
+        plt.xticks([1, 2, 3, 4, 5])
+        plt.grid(axis='y', alpha=0.3)
+        plt.savefig(save_path, dpi=300, bbox_inches='tight')
+        plt.close()
+        print(f"✓ グラフを保存: {save_path}")
+    
 # テスト
 if __name__ == "__main__":
     from data_loader import DataLoader

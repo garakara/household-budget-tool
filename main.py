@@ -1,6 +1,7 @@
 from pathlib import Path
 from src.data_loader import DataLoader
 from src.visualizer import Visualizer
+from src.analyzer import Analyzer
 
 def main():
     print("=" * 50)
@@ -27,6 +28,7 @@ def main():
         print("=" * 50)
         print("outputs/graphs/ にグラフが保存されました")
         
+        
     except FileNotFoundError as e:
         print(f"\n❌ エラー: {e}")
         print("\n対処方法:")
@@ -35,6 +37,13 @@ def main():
         print("   コマンド: python main.py")
     except Exception as e:
         print(f"\n❌ 予期しないエラー: {e}")
+
+    # 分析機能追加
+    print("\n" + "=" * 50)
+    analyzer = Analyzer(df)
+    analyzer.analyze_necessity()
+    analyzer.analyze_rating()
+
 
 if __name__ == "__main__":
     main()
